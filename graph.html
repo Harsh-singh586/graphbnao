@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.7.3/dist/css/uikit.min.css" />
+
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.3/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.7.3/dist/js/uikit-icons.min.js"></script>
+<script src="graph.js"></script>
+	<title>Graph JS</title>
+</head>
+<body>
+
+<div class='uk-container uk-width-1-1 uk-background-primary uk-padding-small'>
+	<center>
+<h1 class = '' style="color:white"><b>Graph Bnao</b></h1>
+</center>
+</div>
+
+<div id = 'main' class= 'uk-padding-large'>
+	<center>
+		<h2>Graph Type</h2>
+		<div class="uk-margin">
+        <div uk-form-custom="target: > * > span:first-child">
+            <select id = 'graphtype'>
+                <option value="1">Please select...</option>
+                <option value="bar">Bar</option>
+                <option value="doughnut">Pie</option>
+                <option value="line">Line</option>
+                <option value="polarArea">Polar Area</option>
+            </select>
+            <button class="uk-button uk-button-default" type="button" tabindex="-1">
+                <span></span>
+                <span uk-icon="icon: chevron-down"></span>
+            </button>
+        </div>
+    </div>
+    <h2>Label</h2>
+    <input type="text" id = 'label' class="uk-input uk-form-width-medium" placeholder="Enter Label">
+<div class= 'uk-width-1-2 uk-align-center'>
+	<canvas class="uk-width-small uk-height-small uk-background-muted" id="myChart"></canvas>
+</div>
+
+<div id = 'data' uk-grid>
+
+<span class=" uk-width-1-4">X-Axis</span>
+<span class="uk-width-1-4">Y-Axis</span>
+<span class=" uk-width-1-4">Background Color</span>
+<span class=" uk-width-1-4">Border Color</span>
+
+
+<div class="uk-width-1-4">
+<input class="uk-input uk-form-width-small xaxis" type="text" placeholder="xaxis">
+</div>
+<div class="uk-width-1-4">
+<input class="uk-input uk-form-width-xsmall yaxis" type="text" placeholder="X-Small" class = 'yaxix'>
+</div>
+<div class="uk-width-1-4">
+<input class="uk-input uk-form-width-xsmall backcol" type="color" placeholder="X-Small">
+</div>
+<div class="uk-width-1-4">
+<input class="uk-input uk-form-width-xsmall bordercol" type="color" placeholder="X-Small">
+</div>
+
+</div>
+<span onclick="newdata()" class='uk-margin' uk-icon="icon: plus-circle; ratio: 2"></span><br><br>
+<button class="uk-button uk-button-primary" onclick="createchart()">create chart</button>
+</center>
+</div>
+
+
+
+</body>
+</html>
